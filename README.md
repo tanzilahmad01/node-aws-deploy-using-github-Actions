@@ -22,13 +22,6 @@ cd /etc/nginx/sites-available
 sudo nano default
 Inside the Nginx configuration file, add the following block to configure the reverse proxy for your API:
 
-location /api {
-    rewrite ^\/api\/(.*)$ /api/$1 break;
-    proxy_pass http://localhost:8000;
-    proxy_set_header Host $host;
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-}
 Step 6: Restart Nginx
 After making changes to the Nginx configuration, restart Nginx to apply the changes:
 
